@@ -1,7 +1,14 @@
 <div class="container">
   <div class="oferta" *ngIf="oferta !== underfined">
+    <!-- <div class="row">
+      <div class="col">
+        <a [routerLink]="['/oferta',1]" >Oferta 1</a>
+        <a [routerLink]="['/oferta',6]" >Oferta 2</a>
+        <a [routerLink]="['/oferta',8]" >Oferta 3</a>
+      </div>
+    </div> -->
 
-    <div class="row">     
+    <div class="row">
       <div class="col">
         <h4>{{oferta.descricao_oferta}}</h4>
       </div>
@@ -13,8 +20,8 @@
           <img [src]="oferta.imagens[0].url" class="img-fluid"/>
         </div>
 
-        <div class="thumbnails">       
-          <img *ngFor="let imagem of oferta.imagens" [src]="imagem.url" class="img-fluid"/>        
+        <div class="thumbnails">
+          <img *ngFor="let imagem of oferta.imagens" [src]="imagem.url" class="img-fluid"/>
         </div>
       </div>
 
