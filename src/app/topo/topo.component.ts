@@ -24,7 +24,11 @@ export class TopoComponent implements OnInit {
 
   public pesquisaOfertas(termoPesquisa : string ) : void{
     this.ofertasObs =  this.ofertasService.pesquisaOfertas(termoPesquisa);
-    this.ofertasObs.subscribe((ofertas: Oferta[]) => {console.log(ofertas)})
+    this.ofertasObs.subscribe(
+      (ofertas: Oferta[]) => {console.log(ofertas)},
+      (erro => console.log(`Erro status ${erro.status}`)),
+      () => console.log("Fluxo de evento completo")//partindo do observable do metodo get já tem a conclusão da sua stream
+    )
   }
 
 }
