@@ -35,11 +35,11 @@ export class OfertaComponent implements OnInit {
     this.ofertasService.getOfertaPorId(this.id).
     then((resposta : Oferta ) => {this.oferta = resposta; console.log(this.oferta)});
 
-    let tempo = interval(500);
+    // let tempo = interval(500);
 
-    this.tempoObservableSubscription = tempo.subscribe((intervalo : number) => {
-                                          console.log(intervalo);
-                                        })
+    // this.tempoObservableSubscription = tempo.subscribe((intervalo : number) => {
+    //                                       console.log(intervalo);
+    //                                     })
 
     //Observable (observável)
     var observableTeste = Observable.create((observer: Observer<number>) => {
