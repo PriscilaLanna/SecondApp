@@ -14,12 +14,13 @@ export class TopoComponent implements OnInit {
 
   private ofertasObs : Observable<Oferta[]>
   private ofertaSubject : Subject<string> = new Subject<string>()
+  private ofertas : Array<Oferta>
 
   constructor(private ofertasService : OfertasService) { }
 
   ngOnInit() {
     this.ofertasObs = this.ofertaSubject.pipe(
-      debounceTime(1000),
+      debounceTime(500),
       distinctUntilChanged(),
       switchMap(termo => {
 
@@ -35,7 +36,11 @@ export class TopoComponent implements OnInit {
       })
     )
 
-    this.ofertasObs.subscribe(ofertas => console.log(ofertas) )
+    this.ofertasObs.subscribe(ofertas =>{
+        console.log(ofertas)
+        this.ofertas = ofertas
+      }
+    )
   }
 
   public pesquisaOfertasSubject(termoPesquisa: string): void{

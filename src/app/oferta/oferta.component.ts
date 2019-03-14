@@ -10,7 +10,7 @@ import { interval, Observable, Observer, Subscription } from 'rxjs';
   styleUrls: ['./oferta.component.css'],
   providers: [OfertasService]
 })
-export class OfertaComponent implements OnInit {
+export class OfertaComponent implements OnInit, OnDestroy {
 
   public id : number
   public oferta : Oferta
@@ -58,9 +58,9 @@ export class OfertaComponent implements OnInit {
 
   }
 
-   ngOnDestroy(){
-    this.tempoObservableSubscription.unsubscribe();
+  ngOnDestroy(){
+   // this.tempoObservableSubscription.unsubscribe();
     this.meuObservableSubscription.unsubscribe();
-   }
+  }
 
 }
