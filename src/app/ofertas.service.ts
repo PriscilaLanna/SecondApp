@@ -33,13 +33,13 @@ export class OfertasService{
     public getComoUsarPorId(id : number) : Promise<string>{
       return this.http.get(`${URI_API}/como-usar/?id=${id}`)
               .toPromise()
-              .then((resposta : any) => { return resposta[0].descricao_oferta });
+              .then((resposta : any) => { return resposta[0].descricao });
     }
 
     public getOndeFicaPorId(id : number) : Promise<string>{
       return this.http.get(`${URI_API}/onde-fica/?id=${id}`)
               .toPromise()
-              .then((resposta : any ) => { return resposta[0].descricao_oferta });
+              .then((resposta : any ) => { return resposta[0].descricao });
     }
 
     public pesquisaOfertas(termo : string ) : Observable<any>{
