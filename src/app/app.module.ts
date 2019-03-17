@@ -17,6 +17,8 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
 
+import {DescricaoReduzida} from '../app/util/descricaoReduzida'
+
 //No final do arquivo coloca:
 registerLocaleData(localePt);
 
@@ -30,7 +32,8 @@ registerLocaleData(localePt);
     DiversaoComponent,
     OfertaComponent,
     ComoUsarComponent,
-    OndeFicaComponent
+    OndeFicaComponent,
+    DescricaoReduzida
   ],
   imports: [
     BrowserModule,
